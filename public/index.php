@@ -8,8 +8,8 @@
 ?>
 
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
-<?php include("header.php"); ?>
 <head>
     <title>Pro Palindrome </title>
 </head>
@@ -29,22 +29,21 @@
     Panama!", "Amor, Roma", "race car", "stack cats", "step on no pets", "taco cat", "put it up", "Was 
     it a car or a cat I saw?" and "No 'x' in Nixon".”   
 </p>
-<li>
-    <ol> Your task is to check if a word from given user input is a palindrome. Implement a way for 
+<ol>
+    <li> Your task is to check if a word from given user input is a palindrome. Implement a way for 
         a user to give input and a way to check it.   
-    </ol>
-    <ol>
+    </li>
+    <li>
         After each user input, print the input underneath the input field as green if it is a 
         palindrome, and red if not. Non­palindromes should also be printed as inverted.   
-        </br>
+        <br/>
         <b> NB!​</b>
          The palindrome should read correctly regardless of whitespace, punctuation or 
         capital letters. The printed inputs should still have whitespace etc. left. 
-    </ol>
-    <ol>Reorder the printed palindromes alphabetically after each input. Correct palindromes 
+    </li>
+    <li>Reorder the printed palindromes alphabetically after each input. Correct palindromes 
         should all be listed before incorrect ones.
-    </ol>
-</li>
+    </li>
+</ol>
 </body>
-<?php include("footer.php"); ?>
 </html>
