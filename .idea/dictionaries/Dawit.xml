@@ -2,7 +2,10 @@
   <dictionary name="Dawit">
     <words>
       <w>dawit</w>
+      <w>errormesg</w>
       <w>nida</w>
+      <w>nonpalindromelist</w>
+      <w>palindromelist</w>
     </words>
   </dictionary>
 </component>
