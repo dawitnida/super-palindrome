@@ -27,8 +27,8 @@
     </header>
     <!-- Main content -->
     <section class="container">
-        <div class="col-sm-12" style="margin-top:40px">
-
+        <div class="col-sm-12">
+            <h2> Palindrome Checker</h2>
             <div class="form-group">
                 <form action="<?php echo $basedir . "app/palindromechecker.php"; ?>" method="POST">
                     <input type="text" class="form-control" name="phrase" placeholder="Insert your input here"><br/>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="col-sm-6">
-            <h2> Palindrome list</h2>
+            <h3> Palindrome list</h3>
             <?php
             $palindromelist = dirname(__FILE__) . "/app/palindromelist.log";
             //check if the file exists : return false if it does not
@@ -51,13 +51,13 @@
                     echo "<font color=" . "green" . ">" . nl2br($list) . "</font>";
                 }
             } else {
-                echo "No list found or error while opening file.";
+                echo "No list found or file not created yet.";
             }
             ?>
         </div>
 
         <div class="col-sm-6">
-            <h2> None Palindrome list</h2>
+            <h3> None Palindrome list</h3>
             <?php
             $nonpalindromelist = dirname(__FILE__) . "/app/nonpalindromelist.log";
             if (file_exists($nonpalindromelist)) {
@@ -68,7 +68,7 @@
                     echo "<font color=" . "red" . ">" . nl2br($list) . "</font>";
                 }
             } else {
-                echo "No list found or error while opening file.";
+                echo "No list found or file not created yet.";
             }
             ?>
         </div>
