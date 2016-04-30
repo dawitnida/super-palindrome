@@ -11,7 +11,7 @@ $errormesg = "<font color=" . "red" . ">Nothing is happening...insert word, phra
 if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['submit']) == "Check") {
     //validate input field
     $data = $check->validate($_POST['phrase']);
-    
+
     if ($data) {
         $input = $_POST['phrase'];   //  this is needed to store the user input as it is,
         // the program does some validations so the input format changes
@@ -23,6 +23,18 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['submit']) == "Check"
         echo $errormesg;
     }
 }
+if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['delete']) == "Remove") {
+    $palindromelist = dirname(__FILE__) . "/palindromelist.log";
+    $nonpalindromelist = dirname(__FILE__) . "/nonpalindromelist.log";
+
+    //remove files from the server
+    unlink($palindromelist);
+    unlink($nonpalindromelist);
+
+    header("refresh:2; url =../index.php"); //wait for 2 seconds to show the message
+    echo $palindromelist . " and " . $nonpalindromelist . "  removed . ";
+}
+
 
 
 

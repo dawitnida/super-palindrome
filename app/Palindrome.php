@@ -16,16 +16,16 @@ class Palindrome
         $reverse = strrev($data);
         //compare the two strings, with length to be sure: return int
         $result = strncasecmp($data, $reverse, strlen((string)$data));
-        
+
         $palindromelist = 'palindromelist.log';
         $nonpalindromelist = 'nonpalindromelist.log';
-        
+
         if ($result == 0) {  //the two strings are equal
             file_put_contents($palindromelist, $input . PHP_EOL, FILE_APPEND);
             header("refresh:2; url=../index.php"); //wait for 2 seconds to show the message
             echo trim($input) . " saved to palindrome list.";
         } else {
-            file_put_contents($nonpalindromelist, $input . PHP_EOL, FILE_APPEND);
+            file_put_contents($nonpalindromelist, strrev($input) . PHP_EOL, FILE_APPEND);
             header("refresh:2; url=../index.php"); //wait for 2 seconds to show the message
             echo trim($input) . " not palindrome.";
         }
@@ -35,7 +35,7 @@ class Palindrome
 
 class Validator
 {
-    // cleanup the user input, white space, special characters or case sensitivity 
+    // cleanup the user input, white space, special characters or case sensitivity
     public function validate($input)
     {
         if (!empty($input)) {

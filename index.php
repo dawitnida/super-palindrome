@@ -33,6 +33,7 @@
                 <form action="<?php echo $basedir . "app/palindromechecker.php"; ?>" method="POST">
                     <input type="text" class="form-control" name="phrase" placeholder="Insert your input here"><br/>
                     <input type="submit" class="btn" name="submit" value="Check"/>
+                    <input type="submit" class="btn" name="delete" value="Remove Files"/>
                 </form>
             </div>
         </div>
@@ -43,9 +44,12 @@
             $palindromelist = dirname(__FILE__) . "/app/palindromelist.log";
             //check if the file exists : return false if it does not
             if (file_exists($palindromelist)) {
-                //read entire file into a string and close the file 
-                $list = file_get_contents($palindromelist, FILE_USE_INCLUDE_PATH);
-                echo "<font color=" . "green" . ">" . nl2br($list) . "</font>";
+                //read entire file into an array and use natural sort
+                $trimmed = file($palindromelist, FILE_SKIP_EMPTY_LINES);
+                natcasesort($trimmed);
+                foreach ($trimmed as $list) {
+                    echo "<font color=" . "green" . ">" . nl2br($list) . "</font>";
+                }
             } else {
                 echo "No list found or error while opening file.";
             }
@@ -57,9 +61,12 @@
             <?php
             $nonpalindromelist = dirname(__FILE__) . "/app/nonpalindromelist.log";
             if (file_exists($nonpalindromelist)) {
-                //read entire file into a string and close the file 
-                $list = file_get_contents($nonpalindromelist, FILE_USE_INCLUDE_PATH);
-                echo "<font color=" . "red" . ">" . nl2br($list) . "</font>";
+                //read entire file into an array and use natural sort
+                $trimmed = file($nonpalindromelist, FILE_SKIP_EMPTY_LINES);
+                natcasesort($trimmed);
+                foreach ($trimmed as $list) {
+                    echo "<font color=" . "red" . ">" . nl2br($list) . "</font>";
+                }
             } else {
                 echo "No list found or error while opening file.";
             }
