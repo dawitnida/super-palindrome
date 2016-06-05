@@ -5,6 +5,7 @@
  * Date: 4/29/2016
  * Time: 16:45
  */
+
 ?>
 
 <!DOCTYPE html>
@@ -75,6 +76,15 @@
         <div class="col-sm-6"> 
             <h2> Testing Cloud9</h2>
         </div>
+        <div class="col-sm-6"> Testing multiple incons</div>
+        <div class="col-sm-6"> Testing multiple incons</div>
+        <div class="col-sm-6"> Testing multiple incons</div>
+        <?php
+         echo "Testing "
+         
+        ?>
+        
+        
     </section>
 
 </div>
