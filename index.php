@@ -78,9 +78,8 @@
         </div>
         <div class="col-sm-6"> Testing multiple incons</div>
         <div class="col-sm-6"> Testing multiple incons</div>
-        <div class="col-sm-6"> Testing multiple incons</div>
         <?php
-         echo "Testing "
+         echo "Testing Heroku "
          
         ?>
         
